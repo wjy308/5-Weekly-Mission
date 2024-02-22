@@ -1,0 +1,123 @@
+:root {
+  --primary-color: #6d6afe;
+  --red-color: #ff5b56;
+  --black-color: #111322;
+  --white-color: #ffffff;
+  --gray1-color: #3e3e43;
+  --gray2-color: #9fa6b2;
+  --gray3-color: #ccd5e3;
+  --gray4-color: #e7effb;
+  --gray5-color: #f0f6ff;
+}
+body {
+  background-color: #f0f6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header a.logo {
+  margin-bottom: 16px;
+}
+
+header a.signin_button {
+  color: var(--primary-color);
+}
+header a.signin_button::active {
+  color: var(--primary-color);
+}
+
+section .signup_form {
+  display: flex;
+  flex-direction: column;
+}
+
+section .toggle_wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+section .signup_form img.password_eyes {
+  width: 20px;
+  position: absolute;
+  right: 15px;
+  bottom: 40px;
+  cursor: pointer;
+}
+
+section .signup_form img.password_eyes.eyes_offset {
+  bottom: 39px;
+}
+
+section label {
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+}
+
+section input {
+  border: 1px solid var(--gray3-color);
+  border-radius: 8px;
+  padding: 18px 15px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+section input.wrong_password {
+  border: 1px solid rgb(255, 96, 96);
+  position: relative;
+}
+
+section #wrong_message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  color: rgb(255, 96, 96);
+}
+
+section button {
+  padding: 16px 0;
+  border-radius: 8px;
+  border: none;
+  background-image: linear-gradient(270deg, #6ae3fe, var(--primary-color));
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 32px;
+  font-size: 14px;
+  color: #373740;
+  padding: 12px 24px;
+  border: 1px solid var(--gray3-color);
+  border-radius: 8px;
+  background-color: var(--gray4-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .sns_wrap {
+  display: flex;
+  gap: 16px;
+}
+
+.hidden {
+  display: none;
+}
