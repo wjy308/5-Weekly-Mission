@@ -19,6 +19,7 @@ body {
 h1 {
   margin-bottom: 1.5rem;
 }
+
 p,
 a,
 span {
@@ -26,11 +27,17 @@ span {
 }
 
 header {
-  padding: 20px 200px;
+  padding: 2rem 20rem;
   background-color: var(--gray5-color);
   position: sticky;
   transition: box-shadow 0.5s;
   top: 0;
+}
+
+header .header_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header.nav_shadow {
@@ -40,10 +47,12 @@ header.nav_shadow {
   border-bottom: 1px solid #e2ebfa;
 }
 
-header .header_wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header .login {
+  flex-shrink: 0;
+}
+
+header .logo {
+  flex-shrink: 0;
 }
 
 header .logo img {
@@ -60,6 +69,8 @@ header .login a:active {
   text-decoration: none;
 }
 
+/* main */
+
 main {
   background-color: #fff;
 }
@@ -72,11 +83,13 @@ main .main_header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 70px;
+  width: 100%;
+  padding-top: 7rem;
 }
 
 main h1 {
-  font-size: 64px;
+  text-align: center;
+  font-size: 6.4rem;
   font-weight: 500;
 }
 
@@ -90,6 +103,8 @@ main .main_header a.link_add:active {
   margin-top: 40px;
   margin-bottom: 90px;
 }
+
+/* main section */
 
 main section {
   box-shadow: 0 -15px 40px 20px var(--gray4-color);
@@ -130,6 +145,10 @@ section .card .card_item {
   align-items: center;
 }
 
+section .card .card_item figure {
+  flex-shrink: 0;
+}
+
 section .image_description {
   margin-top: 10px;
   line-height: 25px;
@@ -148,12 +167,14 @@ footer {
 }
 
 footer .footer_wrap {
-  padding: 32px 104px 108px;
+  padding: 3.2rem 10.4rem 10.8rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   color: #676767;
 }
+
+/* footer */
 
 footer .privacy_fnq_wrap {
   justify-self: center;
@@ -169,10 +190,10 @@ footer .footer_wrap a {
 
 footer .privacy_fnq_wrap {
   display: flex;
-  gap: 30px;
+  gap: 3rem;
 }
 
 footer .sns_fill_wrap {
   display: flex;
-  gap: 12px;
+  gap: 1.2rem;
 }

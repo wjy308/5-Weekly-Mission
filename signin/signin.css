@@ -9,18 +9,30 @@
   --gray4-color: #e7effb;
   --gray5-color: #f0f6ff;
 }
+
+html {
+  font-size: 10px;
+}
+
 body {
   background-color: var(--gray5-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 10rem;
 }
+
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 400px;
+}
+
+p,
+a,
+span {
+  font-size: 1.6rem;
 }
 
 header {
@@ -37,6 +49,7 @@ header a.logo {
 header a.signup_button {
   color: var(--primary-color);
 }
+
 header a.signup_button::active {
   color: var(--primary-color);
 }
@@ -65,11 +78,12 @@ section .signin_form img.password_eyes.eyes_offset {
 }
 
 section label {
-  margin-bottom: 12px;
-  font-size: 14px;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
 }
 
 section input {
+  font-size: 1.6rem;
   border: 1px solid var(--gray3-color);
   border-radius: 8px;
   padding: 18px 15px;
@@ -82,12 +96,12 @@ section button {
   border: none;
   background-image: linear-gradient(270deg, #6ae3fe, var(--primary-color));
   color: #fff;
-  font-size: 18px;
+  font-size: 1.8rem;
   cursor: pointer;
 }
 
 footer {
-  font-size: 14px;
+  font-size: 1.4rem;
   margin-top: 32px;
   color: #373740;
   padding: 12px 24px;
@@ -102,4 +116,8 @@ footer {
 footer .sns_wrap {
   display: flex;
   gap: 16px;
+}
+
+footer p {
+  font-size: 1.4rem;
 }
