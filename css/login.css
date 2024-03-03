@@ -29,7 +29,7 @@ a.btn-home {
 }
 
 .container {
-  margin: 238px 520px;
+  margin: 120px 32px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +52,8 @@ a.btn-home {
 .login-mid{
   font-size: 14px;
   font-weight: 400;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -60,11 +61,14 @@ a.btn-home {
 #input-email {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
 }
 
 #input-password {
   margin-top: 10px;
   margin-bottom: 10px;
+  max-width: 400px;
 }
 
 /* 버튼 기본 속성 */
@@ -83,6 +87,7 @@ a.btn-home {
   padding: 16px 20px;
   height: 53px;
   width: 100%;
+  max-width: 400px;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -90,11 +95,14 @@ a.btn-home {
   border: none;
 }
 
-.login-btm {
+.login-btm { 
+  width: 100%;
+  max-width: 400px;
 }
 
 .snsLogin-container {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 66px;
   border-radius: 8px;
   display: flex;

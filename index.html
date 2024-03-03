@@ -14,110 +14,96 @@
 </head>
 <body>
   <!-- 네이게이션 바 -->
-  <nav>
+  <nav class="navigationBar">
     <div class="nav-container">
-      <a class="btn-home" href="./index.html">Linkbrary</a> <a class="btn login" href="./login.html">로그인</a>
+      <a class="btn-home" href="./index.html">Linkbrary</a> <a class="btn btn-login" href="./login.html">로그인</a>
     </div>
   </nav>  
   <!-- 헤더 -->
   <header class="header">
     <div class="header-container">
-      <div class ="header-contents-txt">
-        <span class="gra-PurToPink">세상의 모든 정보</span>를<br>
-        쉽게 저장하고 관리해보세요
-      </div>
+      <h2 class ="header-contents-txt">
+        <span class="text-gradient-purple-to-pink">세상의 모든 정보</span>를<br>
+        쉽게 저장하고<br class="only-tablet"> 관리해보세요
+      </h2>
       <a class="btn add-link" href="#">링크 추가하기</a>
-      <div class="header-contents-img">
-        <img class="header-img">
-      </div>
+      <img src="./img/hero.png" class="hero-img">
     </div>
   </header>
   <!-- 메인 내용부분 -->
   <main>
     <!-- 1번 내용 -->
     <div class="main-container"> 
-        <div class="main-contents-txt">
-          <div>
-            <span class="gra-PinkToSky">
-              원하는 링크</span>를<br>
-              저장하세요<br>
-          </div>
-          <div class="mainTxt-description">
-            나중에 읽고 싶은 글, 다시 보고 싶은 영상,<br>
-            사고 싶은 옷, 기억하고 싶은 모든 것을<br>
-            한 공간에 저장하세요.<br>
-          </div>
-        </div>
-        <div class="main-contents-img">
-          <img class="main-img-save" src="./img/gra.png">
-          <img class="main-img-save" src="./img/dog.png">
-          <img class="main-img-save" src="./img/bed.png">
-        </div>
+      <div class="main-contents-txt">
+        <h2 class="title">
+          <span class="text-gradient-pink-to-sky">
+            원하는 링크</span>를 <br class="only-tablet-pc"> 저장하세요
+        </h2>
+        <p class="mainTxt-description">
+          나중에 읽고 싶은 글, 다시 보고 싶은 영상, <br class="only-tablet-pc">
+          사고 싶은 옷, 기억하고 싶은 모든 것을 <br class="only-tablet-pc">
+          한 공간에 저장하세요.
+        </p>
+      </div>
+      <img class="main-contents-img" src="./img/image1.png">
     </div>
     <!-- 2번 내용 -->
     <div class="main-container">
-      <div class="main-contents-img">
-        <img class="main-img-fav" src="./img/fav.png">
-      </div>
       <div class="main-contents-txt">
-        <div>
-          링크를 폴더로<br>
-          <span class="gra-YelToSky">관리</span>하세요<br>
-        </div>
+        <h2 class="title">
+          링크를 폴더로<br class="only-tablet-pc">
+          <span class="text-gradient-yellow-to-sky">관리</span>하세요
+        </h2>
           <div class="mainTxt-description">
-            나만의 폴더를 무제한으로 만들고<br>
+            나만의 폴더를 무제한으로 만들고<br class="only-tablet-pc">
             다양하게 활용할 수 있습니다.
           </div>
       </div>
+      <img class="main-contents-img order-1" src="./img/image2.png">
     </div>
     <!-- 3번 내용 -->
     <div class="main-container">
       <div class="main-contents-txt">
-        <div>
-          저장한 링크를<br>
-          <span class="gra-BluToBlu">공유</span>해 보세요.<br>
-        </div>
+        <h2 class="title">
+          저장한 링크를<br class="only-tablet-pc">
+          <span class="text-gradient-blue-to-blue">공유</span>해 보세요.
+        </h2>
         <div class="mainTxt-description">
-          여러 링크를 폴더에 담고 공유할 수 있습니다.<br>
-          가족, 친구, 동료들에게 쉽고 빠르게 링크를<br>
+          여러 링크를 폴더에 담고 공유할 수 있습니다.<br class="only-tablet-pc">
+          가족, 친구, 동료들에게 쉽고 빠르게 링크를<br class="only-tablet-pc">
           공유해 보세요.
         </div>
       </div>
-      <div class="main-contents-img share">
-        <img class="main-img-fav" src="./img/share.png">
-      </div>
+      <img class="main-contents-img" src="./img/image3.png">
     </div>
     <!-- 4번 내용 -->
     <div class="main-container">
-      <div class="main-contents-img search">
-        <img class="main-img-share" src="./img/search.png">
-      </div>
       <div class="main-contents-txt">
-        <div>
-          저장한 링크를<br>
-          <span class="gra-GrenToSky">검색</span>해 보세요<br>
-        </div>
+        <h2 class="title">
+          저장한 링크를<br class="only-tablet-pc">
+          <span class="text-gradient-green-to-sky">검색</span>해 보세요
+        </h2>
         <div class="mainTxt-description">
-            중요한 정보들을 검색으로 쉽게 찾아보세요.<br>
+            중요한 정보들을 검색으로 쉽게 찾아보세요.
         </div>
       </div>
+      <img class="main-contents-img order-1" src="./img/image4.png">
     </div>
   </main>
   <!-- 하단 -->
   <footer>
-    <div class="footer-copyright">
+    <div class="footer-copyright order-1">
       @codeit - 2023
     </div>
-    <div>
-      <a class="footer-policy" href="./privacy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="footer-policy" href="./faq.html">FAQ</a>
-    </div>
+    <a class="footer-policy" href="./privacy.html">Privacy Policy</a>
+    <a class="footer-faq" href="./faq.html">FAQ</a>
     <div class="footer-sns">
       <a target="_blank" href="https://www.facebook.com/?locale=ko_KR"><img src="./img/icn_facebook.png">&nbsp;</a> 
       <a target="_blank" href="https://twitter.com/?lang=ko"><img src="./img/icn_twitter.png">&nbsp;</a> 
       <a target="_blank" href="https://www.youtube.com/"><img src="./img/icn_youtube.png">&nbsp;</a> 
       <a target="_blank" href="https://www.instagram.com/sem/campaign/emailsignup/?campaign_id=13530338586&extra_1=s%7Cc%7C547348910614%7Ce%7Cinstargram%7C&placement=&creative=547348910614&keyword=instargram&partner_id=googlesem&extra_2=campaignid%3D13530338586%26adgroupid%3D126262417614%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-299214965736%26loc_physical_ms%3D1009871%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gad_source=1&gclid=CjwKCAiA_tuuBhAUEiwAvxkgTmF85hnVoJ_e2VaqbUN90ryUBh1ih19k9dSSWYGxZy1n8SeKEEy8bRoCGVcQAvD_BwE">
-        <img src="./img/icn_instagram.png">&nbsp;</a> 
+        <img src="./img/icn_instagram.png">&nbsp;
+      </a> 
     </div>
   </footer>
 </body>
