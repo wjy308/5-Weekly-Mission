@@ -74,3 +74,15 @@ input{
   color: red;
   margin-bottom: 10px;
 }
+
+.eye-button {  
+  border: none;
+  padding: unset;
+  background-color: unset;
+  cursor: pointer;
+  position: absolute; 
+}
+
+.login-signUp-form__body__password-label {
+  position: relative;
+}
