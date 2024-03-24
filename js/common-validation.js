@@ -11,31 +11,33 @@ const errMsg = {
 };
 
 // 이메일 에러 메세지 출력
-function setErrMsg(emailErrMsgEl, errMsg){
+function setErrMsg(emailErrMsgEl, errMsg) {
   emailErrMsgEl.textContent = errMsg;
 }
 
-
 // 이메일 검사
-function isEmailValid(email){
+function isEmailValid(email) {
   return new RegExp(EMAIL_REGEX).test(email);
   //정규식에 맞을 시 true 맞지 않을 떈 false 반환;
 }
 
-
 // 형식 맞을 때 비워주기
-function removeErrMsg(errMsgEl, errMsg){
+function removeErrMsg(errMsgEl, errMsg) {
   errMsgEl.textContent = errMsg;
 }
 
 function togglePassword(input, toggleButton) {
   if (input.getAttribute("type") === "password") {
     input.setAttribute("type", "text");
-    toggleButton.getElementsByTagName("img")[0].setAttribute("src", "../assets/images/eye-on.svg");
+    toggleButton
+      .getElementsByTagName("img")[0]
+      .setAttribute("src", "../assets/images/eye-on.svg");
     return;
   }
   input.setAttribute("type", "password");
-  toggleButton.getElementsByTagName("img")[0].setAttribute("src", "../assets/images/eye-off.svg");
+  toggleButton
+    .getElementsByTagName("img")[0]
+    .setAttribute("src", "../assets/images/eye-off.svg");
 }
 
-export {setErrMsg, isEmailValid, removeErrMsg, togglePassword, errMsg};
+export { setErrMsg, isEmailValid, removeErrMsg, togglePassword, errMsg };

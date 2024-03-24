@@ -1,57 +1,69 @@
-import { setErrMsg, isEmailValid, removeErrMsg, errMsg, togglePassword } from "../js/common-validation.js";
-import { isDuplicate, isPassWord, isCheckPassword, isSignUp } from "./sign-up.js"
+import {
+  setErrMsg,
+  isEmailValid,
+  removeErrMsg,
+  errMsg,
+  togglePassword,
+} from "../js/common-validation.js";
+import {
+  isDuplicate,
+  isPassWord,
+  isCheckPassword,
+  isSignUp,
+} from "./sign-up.js";
 
-
-const emailInputEl = document.querySelector('.input-email');
-const emailErrMsgEl = document.querySelector('.err-email');
+const emailInputEl = document.querySelector(".input-email");
+const emailErrMsgEl = document.querySelector(".err-email");
 emailInputEl.addEventListener("blur", validateEmail);
 
 // 1. 이메일이 비었는가
 // 2. 유효한 이메일인가
 // 3. 중복 검사
 // 4. 유효하다면 p태그 비워주기
-function validateEmail(){
+function validateEmail() {
   const email = emailInputEl.value;
-  if(email === ""){
+  if (email === "") {
     setErrMsg(emailErrMsgEl, errMsg.NO_EMAIL);
     return;
   }
-  if(!isEmailValid(email)){
+  if (!isEmailValid(email)) {
     setErrMsg(emailErrMsgEl, errMsg.NOT_EMAIL);
     return;
   }
-  if(isDuplicate(email)){
-    setErrMsg(emailErrMsgEl, errMsg.DUPLICATE_EMAIL)
-    return;
-  }
+  // if (isDuplicate(email)) {
+  //   setErrMsg(emailErrMsgEl, errMsg.DUPLICATE_EMAIL);
+  //   return;
+  // }
   removeErrMsg(emailErrMsgEl, errMsg.REMOVE_MSG);
 }
 
-const passwordInputEl = document.querySelector('.input-password');
-const passwodrErrorMessageEl = document.querySelector('.err-password');
+const passwordInputEl = document.querySelector(".input-password");
+const passwodrErrorMessageEl = document.querySelector(".err-password");
 passwordInputEl.addEventListener("blur", validatePassword);
 
-const passwordCheckInputEl = document.querySelector('.input-password-check');
-const passwordCheckErrorMessageEl = document.querySelector('.err-password-check');
+const passwordCheckInputEl = document.querySelector(".input-password-check");
+const passwordCheckErrorMessageEl = document.querySelector(
+  ".err-password-check"
+);
 passwordCheckInputEl.addEventListener("blur", checkPassword);
 
-function validatePassword(){
+function validatePassword() {
   const password = passwordInputEl.value;
-  if(password === ""){
+  if (password === "") {
     setErrMsg(passwodrErrorMessageEl, errMsg.NO_PWD);
     return;
   }
-  if(!isPassWord(password)){
+  if (!isPassWord(password)) {
     setErrMsg(passwodrErrorMessageEl, errMsg.REQUIRE_PASSWORD);
     return;
   }
   removeErrMsg(passwodrErrorMessageEl, errMsg.REMOVE_MSG);
 }
 
-function checkPassword(){
+function checkPassword() {
   const password = passwordInputEl.value;
   const password2 = passwordCheckInputEl.value;
-  if(!isCheckPassword(password, password2)){
+  if (!isCheckPassword(password, password2)) {
     setErrMsg(passwordCheckErrorMessageEl, errMsg.NOT_SAME_PASSWORD);
     return;
   }
@@ -59,7 +71,9 @@ function checkPassword(){
 }
 
 const passwordToggleButton = document.querySelector("#password-toggle");
-const passwordCheckToggleButton = document.querySelector("#password-check-toggle");
+const passwordCheckToggleButton = document.querySelector(
+  "#password-check-toggle"
+);
 passwordToggleButton.addEventListener("click", () =>
   togglePassword(passwordInputEl, passwordToggleButton)
 );
@@ -68,15 +82,55 @@ passwordCheckToggleButton.addEventListener("click", () =>
 );
 
 const loginForm = document.querySelector("#form");
-loginForm.addEventListener("submit",clickLoginBtn);
+loginForm.addEventListener("submit", submitButton);
 
-function clickLoginBtn(e){
+async function submitButton(e) {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(
+      "https://bootcamp-api.codeit.kr/api/check-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: emailInputEl.value,
+        }),
+      }
+    );
+    if (response.status === 409) {
+      setErrMsg(emailErrMsgEl, errMsg.DUPLICATE_EMAIL);
+      return;
+    }
+  } catch (err) {}
+
+  try {
+    const response = await fetch("https://bootcamp-api.codeit.kr/api/sign-up", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: emailInputEl.value,
+        password: passwordInputEl.value,
+      }),
+    });
+    if (response.ok) {
+      location.href = "../folder/index.html";
+      return;
+    }
+  } catch (err) {}
+}
+
+function clickLoginBtn(e) {
   const inputEmail = emailInputEl.value;
   const inputPassword = passwordInputEl.value;
   const inputPassword2 = passwordCheckInputEl.value;
   e.preventDefault();
 
-  if(isSignUp(inputEmail, inputPassword, inputPassword2)){
+  if (isSignUp(inputEmail, inputPassword, inputPassword2)) {
     location.href = "../folder/index.html";
     return;
   }
