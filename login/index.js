@@ -11,6 +11,7 @@ import { isLogIn } from "./validation.js";
 const emailInputEl = document.querySelector(".input-email");
 const emailErrMsgEl = document.querySelector(".err-email");
 emailInputEl.addEventListener("blur", validateEmail);
+emailInputEl.addEventListener("keyup", clickEnter);
 
 const passwordInputEl = document.querySelector(".input-password");
 const passwodrErrorMessageEl = document.querySelector(".err-password");
