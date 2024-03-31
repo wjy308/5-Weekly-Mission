@@ -17,8 +17,6 @@ const passwordInputEl = document.querySelector(".input-password");
 const passwodrErrorMessageEl = document.querySelector(".err-password");
 passwordInputEl.addEventListener("blur", validatePassword);
 
-// checkAccessToken("../folder/index.html");
-
 // 1. 이메일이 비었는가
 // 2. 유효한 이메일인가
 // 3. 유효하다면 p태그 비워주기
@@ -70,14 +68,7 @@ async function submitButton(e) {
       throw Error();
     }
 
-    // const { data } = await response.json();
-    // const accessToken = data?.accessToken;
-    // if (!accessToken) {
-    //   alert("토큰이 없습니다.");
-    //   return;
-    // }
-    // localStorage.setItem("accessToken", accessToken);
-    location.href = "../folder/index.html";
+    window.location.href = "../folder/index.html";
   } catch {
     setErrMsg(emailErrMsgEl, errMsg.CHECK);
     setErrMsg(passwodrErrorMessageEl, errMsg.CHECK);
