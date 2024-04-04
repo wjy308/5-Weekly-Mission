@@ -25,3 +25,16 @@
   font-size: 32px;
   font-weight: 600;
 }
+
+@media (min-width: 768px) {
+  .Profile-img {
+    width: 60px;
+    height: 60px;
+  }
+  .Profile-name {
+    font-size: 16px;
+  }
+  .Profile-folderName {
+    font-size: 40px;
+  }
+}

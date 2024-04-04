@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
 import { getUserInfo } from "./getUserInfo";
+import { getUserFolder } from "./getUserFolder";
 
-function useAsync() {
-  const [loading, setLoading] = useState(false);
+export function useAsync() {
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
+  const [userFolder, setUserFolder] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // getUserInfo 함수 호출
-        const data = await getUserInfo();
+        const userInfo = await getUserInfo();
+        const userFolder = await getUserFolder();
         // 반환된 사용자 정보 업데이트
-        setUserInfo(data);
+        setUserInfo(userInfo);
+        setUserFolder(userFolder);
         setLoading(false); // 로딩 상태 변경
       } catch (error) {
         // 에러 발생 시 에러 상태 업데이트
@@ -24,7 +28,5 @@ function useAsync() {
     fetchData(); // fetchData 함수 호출
   }, []);
 
-  return { userInfo, loading, error }; // 상태를 반환
+  return { userInfo, userFolder, loading, error }; // 상태를 반환
 }
-
-export default useAsync;
