@@ -1,0 +1,27 @@
+.Profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  background-color: var(--light-blue);
+}
+
+.Profile-img {
+  margin-top: 30px;
+  border-radius: 9999px;
+  width: 40px;
+  height: 40px;
+}
+
+.Profile-name {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.Profile-folderName {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 600;
+}

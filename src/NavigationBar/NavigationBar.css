@@ -1,0 +1,17 @@
+.NavigationBar {
+  display: flex;
+  justify-items: center;
+  position: sticky;
+  background-color: var(--light-blue);
+  width: 100%;
+  top: 0;
+}
+
+.NavigationBar-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 32px;
+  height: 63px;
+}

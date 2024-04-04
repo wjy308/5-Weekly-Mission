@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavigationBar from "./NavigationBar/NavigationBar.js";
+import "./global.css";
+import "./colors.css";
+import Profile from "./Profile/Profile.js";
+import { getUserInfo } from "./api/getUserInfo.js";
+import { getUserFolder } from "./api/getUserFolder.js";
+import useAsync from "./api/useAsync.js";
+import { useState } from "react";
+import { CardList } from "./CardList/CardList.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavigationBar></NavigationBar>
+      <Profile></Profile>
+      <CardList></CardList>
+    </>
   );
 }
 
