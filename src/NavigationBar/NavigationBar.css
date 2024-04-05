@@ -1,0 +1,49 @@
+.NavigationBar {
+  display: flex;
+  justify-items: center;
+  position: sticky;
+  background-color: var(--light-blue);
+  width: 100%;
+  top: 0;
+  align-items: center;
+}
+
+.NavigationBar-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 32px;
+  height: 63px;
+}
+
+.NavigationBar-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NavigationBar-profile-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+}
+
+.NavaigationBar-profile-email {
+  margin-left: 10px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .NavigationBar {
+    height: 93px;
+  }
+  .NavigationBar-logo {
+    width: 133px;
+    height: 24px;
+  }
+
+  .NavaigationBar-profile-email {
+    display: block;
+  }
+}
