@@ -2,12 +2,12 @@ import { useAsync } from "../api/useAsync";
 import NavProfile from "./NavProfile";
 import "./NavigationBar.css";
 
-function NavigationBar() {
+function NavigationBar({ position }) {
   const { userInfo, userFolder, loading, error } = useAsync();
 
   return (
     <nav className="NavigationBar">
-      <div className="NavigationBar-items">
+      <div className="NavigationBar-items" style={{ position: position }}>
         <a href="/">
           <img
             className="NavigationBar-logo"

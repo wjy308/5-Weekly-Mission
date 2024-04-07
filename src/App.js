@@ -1,20 +1,18 @@
 import "./App.css";
-import NavigationBar from "./NavigationBar/NavigationBar.js";
 import "./global.css";
 import "./colors.css";
-import Profile from "./Profile/Profile.js";
-import { CardList } from "./CardList/CardList.js";
-import Footer from "./Footer/Footer.js";
-import SearchBar from "./SearchBar/SearchBar.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Shared from "./page/Shared.js";
+import Folder from "./page/Folder.js";
 
 function App() {
   return (
-    <>
-      <NavigationBar />
-      <Profile />
-      <CardList />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Shared" element={<Shared />}></Route>
+        <Route path="/Folder" element={<Folder />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
