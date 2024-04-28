@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   width: 325px;
-  height: 366px;
+  height: 327px;
   box-shadow: 0 0.5rem 2.5rem 0 rgba(0, 0, 0, 0.08);
   border-radius: 1.5rem;
 }
@@ -37,6 +37,7 @@
 
 .CardList-item-img.hoverd {
   background-size: 130%;
+  transition: all 0.5s ease-in-out;
 }
 
 .CardList-contents {
@@ -45,6 +46,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .CardList-item-createdAt {
@@ -68,12 +70,17 @@
     column-gap: 5rem;
   }
 
-  @media (min-width: 1124px) {
-    .CardList {
-      max-width: 89rem;
-      grid-template-columns: repeat(auto-fill, 21rem);
-      column-gap: 2rem;
-    }
+  .CardList-item {
+    width: 340px;
+    height: 334px;
+  }
+}
+
+@media (min-width: 1124px) {
+  .CardList {
+    max-width: 89rem;
+    grid-template-columns: repeat(auto-fill, 21rem);
+    column-gap: 2rem;
   }
 }
 /* <div className="FolderList_list-container"> */

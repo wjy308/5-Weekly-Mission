@@ -1,6 +1,5 @@
 import "./App.css";
 import "./global.css";
-import "./colors.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shared from "./page/Shared.js";
 import Folder from "./page/Folder.js";
