@@ -16,3 +16,38 @@
   --text-content-gray: #666666;
   --text-content-black: #333333;
 }
+
+.text-gradient-yellow-to-sky {
+  background-image: linear-gradient(to right, #ffd88b, #6fbaff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-blue-to-blue {
+  background-image: linear-gradient(to right, #528885, #6d7ccd);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-green-to-sky {
+  background-image: linear-gradient(to right, #68e8f9, #fe578f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-purple-to-pink {
+  background-image: linear-gradient(to right, #6d6afe, #ff9f9f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-pink-to-sky {
+  background-image: linear-gradient(to right, #fe8a8a, #a4ceff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

@@ -1,17 +1,16 @@
 .SearchBar {
-  z-index: -1;
   position: relative;
-  width: 90%;
+  width: 325px;
   margin-left: 50px;
   margin-right: 50px;
+  margin-top: 20px;
   max-width: 1124px;
 }
 
 .SearchBar-InputSearch {
   background-color: var(--gray-light);
-  margin-top: 20px;
-  width: 100%;
   height: 43px;
+  width: 100%;
   border-radius: 10px;
   padding-left: 13%;
   padding-right: 8%;
@@ -19,6 +18,30 @@
 
 .SearchBar-InputSearch-icon {
   position: absolute;
-  top: 52%;
+  top: 35%;
   left: 5%;
+}
+
+@media (min-width: 768px) {
+  .SearchBar {
+    width: 745px;
+  }
+  .SearchBar-InputSearch {
+    padding-left: 10%;
+    padding-right: 8%;
+  }
+}
+
+@media (min-width: 1124px) {
+  .SearchBar {
+    width: 1050px;
+  }
+
+  .SearchBar-InputSearch-icon {
+    left: 2%;
+  }
+
+  .SearchBar-InputSearch {
+    padding-left: 5%;
+  }
 }
