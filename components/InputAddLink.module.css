@@ -1,0 +1,57 @@
+.InputAddLinkForm {
+  background-color: var(--light-blue);
+  height: 117px;
+  width: 100%;
+  padding: 24px 32px 40px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.InputAddLinkFormContainer {
+  position: relative;
+}
+
+.LinkIcon {
+  position: absolute;
+  top: 36%;
+  left: 5%;
+}
+
+.InputAddLinkInput {
+  width: 325px;
+  height: 53px;
+  border-radius: 15px;
+  padding-left: 13%;
+  padding-right: 30%;
+  border: 1px solid blue;
+}
+
+.InputAddLinkBtnAdd {
+  width: 80px;
+  height: 37px;
+  border-radius: 5px;
+  position: absolute;
+  top: 15%;
+  right: 3%;
+}
+
+@media (min-width: 768px) {
+  .LinkIcon {
+    left: 3%;
+  }
+  .InputAddLinkInput {
+    width: 704px;
+    padding-left: 8%;
+    padding-right: 19%;
+  }
+  .InputAddLinkBtnAdd {
+    right: 1%;
+  }
+}
+
+@media (min-width: 1124px) {
+  .InputAddLinkInput {
+    width: 760px;
+  }
+}
