@@ -26,7 +26,6 @@ function FolderCardListItem({ item }: ItemResponse) {
   const linkUrl = item.url;
   const handleMouseOver = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
-  console.log("here: ", { item });
 
   const handleDelete = () => {};
 

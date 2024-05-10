@@ -30,7 +30,6 @@ export function useAsync() {
 
     fetchData(); // fetchData 함수 호출
   }, []);
-  console.log("here: ");
 
   return { userInfo, userFolder, loading, error }; // 상태를 반환
 }
