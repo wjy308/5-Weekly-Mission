@@ -1,0 +1,86 @@
+.CardListForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.CardList {
+  display: grid;
+  grid-template-columns: repeat(32.5rem);
+  margin-top: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 106rem;
+  row-gap: 76px;
+  align-items: center;
+}
+
+.CardList_item {
+  display: flex;
+  flex-direction: column;
+  width: 325px;
+  height: 327px;
+  box-shadow: 0 0.5rem 2.5rem 0 rgba(0, 0, 0, 0.08);
+  border-radius: 1.5rem;
+}
+
+.CardList_item_img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-position: center;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.CardList_item_img.hoverd {
+  background-size: 130%;
+  transition: all 0.5s ease-in-out;
+}
+
+.CardList_contents {
+  height: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.CardList-item-createdAt {
+}
+
+.CardList_item_description {
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+.CardList-item-date {
+}
+
+@media (min-width: 768px) {
+  .CardList {
+    grid-template-columns: repeat(auto-fill, 21rem);
+    row-gap: 2.5rem;
+    column-gap: 5rem;
+  }
+
+  .CardList_item {
+    width: 340px;
+    height: 334px;
+  }
+}
+
+@media (min-width: 1124px) {
+  .CardList {
+    max-width: 89rem;
+    grid-template-columns: repeat(auto-fill, 21rem);
+    column-gap: 2rem;
+  }
+}
+/* <div className="FolderList_list-container"> */

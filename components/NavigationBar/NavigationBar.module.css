@@ -1,0 +1,59 @@
+.NavigationBar {
+  display: flex;
+  justify-items: center;
+  position: sticky;
+  background-color: var(--light-blue);
+  width: 100%;
+  top: 0;
+  align-items: center;
+  z-index: 1;
+}
+
+.NavigationBarLogo {
+  width: 133px;
+  height: 24px;
+}
+
+.NavigationBarItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 32px;
+  height: 63px;
+}
+
+.NavigationBarProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NavigationBarProfileImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+.NavaigationBarProfileEmail {
+  margin-left: 10px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .NavigationBar {
+    height: 93px;
+  }
+  .NavigationBarLogo {
+    width: 133px;
+    height: 24px;
+  }
+
+  .NavaigationBarProfileEmail {
+    display: block;
+  }
+}

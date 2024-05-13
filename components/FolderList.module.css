@@ -1,0 +1,39 @@
+.FolderListContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 32px;
+  row-gap: 32px;
+  align-items: flex-start;
+}
+
+.FolderList_list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 12px;
+}
+
+.FolderList_list_menu_container {
+  display: flex;
+  gap: 8px;
+  column-gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.FolderList_button {
+  border-radius: 5px;
+  padding: 6px 10px;
+  border: 1px solid #6d6afe;
+  font-size: 16px;
+  text-align: center;
+  height: 37px;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+}

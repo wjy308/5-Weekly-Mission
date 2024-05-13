@@ -1,0 +1,47 @@
+.SearchBar {
+  position: relative;
+  width: 325px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  max-width: 1124px;
+}
+
+.SearchBar_InputSearch {
+  background-color: var(--gray-light);
+  height: 43px;
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 13%;
+  padding-right: 8%;
+}
+
+.SearchBar_InputSearch_icon {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+}
+
+@media (min-width: 768px) {
+  .SearchBar {
+    width: 745px;
+  }
+  .SearchBar_InputSearch {
+    padding-left: 10%;
+    padding-right: 8%;
+  }
+}
+
+@media (min-width: 1124px) {
+  .SearchBar {
+    width: 1050px;
+  }
+
+  .SearchBar_InputSearch_icon {
+    left: 2%;
+  }
+
+  .SearchBar_InputSearch {
+    padding-left: 5%;
+  }
+}
