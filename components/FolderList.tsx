@@ -20,7 +20,7 @@ function FolderList() {
   const [curFolder, setCurFolder] = useState(null);
   const [folderId, setFolderId] = useState<number>(0);
 
-  const handleFolderClick = (folder: any) => {
+  const handleFolderClick = (folder: FolderProps) => {
     setSelectedFolder(folder);
     if (folder) {
       setFolderId(folder.id);

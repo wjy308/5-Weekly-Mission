@@ -1,56 +1,41 @@
 import "@/components/CardList/CardList.module.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import FolderCardListItem from "./FolderCardListItem";
-import React from "react";
 import styles from "./CardList/CardList.module.css";
+import {
+  getFolderListById,
+  FolderListResponse,
+  getAllFolderList,
+  GetAllFolderListProps,
+} from "@/lib/api/getUserFolder";
 
-interface FolderIdProps {
-  folderId: number;
-}
 
-interface Folder {
-  id: number;
-  created_at: string;
-  description: string;
-  folder_id: number;
-  image_source: string;
-  title: string;
-  updated_at: string | null;
-  url: string;
-}
-interface FolderListResponse {
-  data: Folder[];
-}
-
-export const FolderCardList = ({ folderId }: FolderIdProps) => {
+export const FolderCardList = ({ folderId }: any) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
   const [folderInfo, setFolderInfo] = useState<FolderListResponse | null>(null); // 폴더 정보 상태
   const BASE_URL = "https://bootcamp-api.codeit.kr/api";
 
   useEffect(() => {
-    const getFolderListById = async () => {
+    const fetchData = async () => {
       try {
-        let response;
+        let response: any;
         if (folderId) {
-          response = await fetch(
-            `${BASE_URL}/users/1/links?folderId=${folderId}`
-          );
+          response = await getFolderListById(folderId);
         } else {
-          response = await fetch(`${BASE_URL}/users/1/links`);
+          response = await getAllFolderList();
         }
-
-        if (!response.ok) {
-          throw new Error("폴더 정보를 가져오는데 실패했습니다.");
-        }
-
-        const folderData = await response.json();
-        setFolderInfo(folderData); // 폴더 정보 상태 업데이트
+        setFolderInfo(response);
       } catch (error) {
-        console.error(error);
-        setFolderInfo(null); // 에러 발생 시 폴더 정보를 빈 배열로 초기화
+        if (error instanceof Error) {
+          setError(error);
+        } else {
+          setError(new Error("Unknown error occurred"));
+        }
       }
     };
-    // 폴더 정보 가져오는 함수 호출
-    getFolderListById();
+
+    fetchData();
   }, [folderId]); // folderId가 변경될 때마다 호출
 
   if (!folderInfo) {
