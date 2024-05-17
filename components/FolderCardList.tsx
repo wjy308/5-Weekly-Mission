@@ -2,6 +2,7 @@ import "@/components/CardList/CardList.module.css";
 import React, { useState, useEffect } from "react";
 import FolderCardListItem from "./FolderCardListItem";
 import styles from "./CardList/CardList.module.css";
+
 import {
   getFolderListById,
   FolderListResponse,
@@ -9,19 +10,27 @@ import {
   GetAllFolderListProps,
 } from "@/lib/api/getUserFolder";
 
+interface FolderCardListProps {
+  folderId: number;
+  searchTerm: string;
+}
 
-export const FolderCardList = ({ folderId }: any) => {
+export const FolderCardList = ({
+  folderId,
+  searchTerm,
+}: FolderCardListProps) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [folderInfo, setFolderInfo] = useState<FolderListResponse | null>(null); // 폴더 정보 상태
-  const BASE_URL = "https://bootcamp-api.codeit.kr/api";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         let response: any;
         if (folderId) {
+          // folderList가 배열인지 확인하고 필터링
           response = await getFolderListById(folderId);
+          setFolderInfo(response);
         } else {
           response = await getAllFolderList();
         }
@@ -48,7 +57,7 @@ export const FolderCardList = ({ folderId }: any) => {
       <div className={`${styles.CardList}`}>
         {folderInfo.data.map((item, index) => (
           <div className={`${styles.CardList_item}`} key={index}>
-            <FolderCardListItem item={item} />
+            <FolderCardListItem item={item} searchTerm={searchTerm} />
           </div>
         ))}
       </div>

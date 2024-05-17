@@ -20,7 +20,7 @@ function FolderListMenu({
 
   return (
     <>
-      {folderList && folderList.data && isEmpty(folderList.data) ? (
+      {folderList && folderList.data && isEmpty(!folderList.data) ? (
         <div className={`${styles.FolderList_list_menu_container}`}>
           <button
             className={`${styles.FolderList_button}`}
